@@ -39,13 +39,16 @@ The currently available variants are:
 ### 1. Install the signing key
 
 ```bash
-curl -fsSL https://rospian.github.io/rospian-repo/rospian-archive-keyring.asc   | gpg --dearmor | sudo tee /usr/share/keyrings/rospian-archive-keyring.gpg >/dev/null
+curl -fsSL https://tranzmatt.github.io/rospian-repo/public/rospian-archive-keyring.asc \
+  | gpg --dearmor \
+  | sudo tee /usr/share/keyrings/rospian-archive-keyring.gpg >/dev/null
 ```
 
 ### 2. Add the APT source
 
 ```bash
-echo "deb [arch=arm64 signed-by=/usr/share/keyrings/rospian-archive-keyring.gpg] https://rospian.github.io/rospian-repo trixie-jazzy main"   | sudo tee /etc/apt/sources.list.d/rospian.list
+echo "deb [arch=arm64 signed-by=/usr/share/keyrings/rospian-archive-keyring.gpg] https://tranzmatt.github.io/rospian-repo trixie-jazzy main" \
+  | sudo tee /etc/apt/sources.list.d/rospian.list
 ```
 
 ### 3. Install packages
